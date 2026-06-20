@@ -319,6 +319,13 @@ header.scrolled nav a.nav-cta {
     z-index: 1000;
   }
   nav ul.open { transform: translateX(0); }
+  header.home-header:not(.scrolled) nav ul a,
+  header.home-header:not(.scrolled) nav ul span.navlink {
+    color: #333333;
+  }
+  header.home-header:not(.scrolled) nav ul a.active {
+    color: var(--amber);
+  }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1078,4 +1085,26 @@ footer {
 @media (max-width: 768px) {
   .team-fullscreen-view { padding: 120px 6% 60px; }
   .fullscreen-members-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 36px 20px; }
+}
+
+/* Let the home hero continue behind the navigation. */
+header.home-header:not(.scrolled) {
+  background: linear-gradient(to bottom, rgba(5, 7, 10, 0.62), rgba(5, 7, 10, 0));
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+header.home-header:not(.scrolled) nav a,
+header.home-header:not(.scrolled) nav span.navlink {
+  color: rgba(255, 255, 255, 0.9);
+}
+header.home-header:not(.scrolled) nav a:hover,
+header.home-header:not(.scrolled) nav span.navlink:hover {
+  color: #FFFFFF;
+}
+header.home-header:not(.scrolled) nav a.active {
+  color: var(--amber);
+}
+header.home-header:not(.scrolled) .nav-toggle span {
+  background: #FFFFFF;
 }

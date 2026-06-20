@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Header() {
   const [open,     setOpen]     = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isHome = useLocation().pathname === '/';
 
   const close = () => setOpen(false);
 
@@ -19,7 +20,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className={scrolled ? 'scrolled' : ''}
+      className={`${scrolled ? 'scrolled' : ''} ${isHome ? 'home-header' : ''}`.trim()}
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
