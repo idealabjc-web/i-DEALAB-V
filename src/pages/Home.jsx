@@ -93,7 +93,7 @@ export default function Home() {
       if (!video || document.visibilityState !== 'visible') return;
       video.muted = true;
       const playback = video.play();
-      if (playback) playback.catch(() => {});
+      if (playback) playback.catch(() => { });
     };
 
     document.addEventListener('visibilitychange', resumeVideo);
@@ -127,7 +127,7 @@ export default function Home() {
             onCanPlay={() => {
               setVideoLoaded(true);
               const playback = videoRef.current?.play();
-              if (playback) playback.catch(() => {});
+              if (playback) playback.catch(() => { });
             }}
           >
             <source src="/videos/vizag-nature.mp4" type="video/mp4" />
@@ -155,7 +155,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Journals &amp; Conferences
+            Journals And Conferences
           </motion.p>
 
           {/* Stats pill */}
