@@ -74,11 +74,11 @@ export default function Footer() {
         <div className="footer-col">
           <div className="footer-col-title">Reach Us</div>
           <ul>
-            <li><a href="mailto:idealabjc@gmail.com">idealabjc@gmail.com</a></li>
+            <li><a href="mailto:idealabjc9@gmail.com">idealabjc9@gmail.com</a></li>
             <li><a href="tel:+919063709344">+91 9063709344</a></li>
             <li><a href="tel:+17162171471">+1 (716) 217-1471</a></li>
             <li style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.5 }}>
-              Kukatpally, Hyderabad,<br />India — 500072
+              Sri Ramnagar, Gajuwaka,<br />Visakhapatnam — 530026
             </li>
           </ul>
         </div>

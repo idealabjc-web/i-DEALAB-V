@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { submitWeb3Form } from '../services/web3forms';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 48 },
@@ -24,12 +25,36 @@ const perks = [
 
 export default function Careers() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle');
+  const [submitError, setSubmitError] = useState('');
   const [form, setForm] = useState({
     firstName:'', lastName:'', email:'', phone:'', position:'', cv:'',
   });
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
-  const handleSubmit = e => { e.preventDefault(); setSubmitted(true); };
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setSubmitStatus('sending');
+    setSubmitError('');
+
+    try {
+      await submitWeb3Form({
+        subject: `New career application — ${form.position || 'General application'}`,
+        from_name: 'i-DEALAB Careers',
+        form_type: 'Career application',
+        name: `${form.firstName} ${form.lastName}`.trim(),
+        email: form.email,
+        phone: form.phone || 'Not provided',
+        position: form.position || 'Not specified',
+        'CV or LinkedIn': form.cv || 'Not provided',
+      });
+      setSubmitted(true);
+      setSubmitStatus('success');
+    } catch (error) {
+      setSubmitError(error.message);
+      setSubmitStatus('error');
+    }
+  };
 
   return (
     <>
@@ -137,13 +162,16 @@ export default function Careers() {
                 </div>
               ))}
 
+              {submitStatus === 'error' && <p className="form-error" role="alert">{submitError}</p>}
+
               <motion.button
                 type="submit"
                 className="submit-btn"
+                disabled={submitStatus === 'sending'}
                 whileHover={{ scale:1.04, y:-3 }}
                 whileTap={{ scale:0.97 }}
               >
-                Submit Application →
+                {submitStatus === 'sending' ? 'Sending…' : 'Submit Application →'}
               </motion.button>
             </>
           )}
