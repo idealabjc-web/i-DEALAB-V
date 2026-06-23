@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 48 },
+  hidden: { opacity: 0, y: 48 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
 };
 
@@ -33,13 +33,13 @@ export default function About() {
     <>
       {/* ─── Page Hero ─── */}
       <section className="page-hero">
-        <motion.div className="eyebrow" initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6 }}>
+        <motion.div className="eyebrow" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           About
         </motion.div>
-        <motion.h1 initial={{ opacity:0, y:28 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, delay:0.1 }}>
+        <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
           About <span className="accent">i-DEALAB</span>
         </motion.h1>
-        <motion.p initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, delay:0.2 }}>
+        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
           A global knowledge-driven organization connecting minds, sparking innovation, and inspiring action.
         </motion.p>
       </section>
@@ -47,13 +47,13 @@ export default function About() {
       {/* ─── Hero image ─── */}
       <motion.div
         className="about-hero-img"
-        initial={{ opacity:0, scale:1.04 }}
-        whileInView={{ opacity:1, scale:1 }}
-        viewport={{ once:true, amount:0.3 }}
-        transition={{ duration:1, ease:[0.16,1,0.3,1] }}
+        initial={{ opacity: 0, scale: 1.04 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <img
-          src="https://static.wixstatic.com/media/f264b0_52655759174e41f2a9e277dc7474b3f2~mv2.jpg"
+          src="/images/Group-Image.jpeg"
           alt="i-DEALAB team group photo"
           loading="lazy"
         />
@@ -66,7 +66,7 @@ export default function About() {
           className="about-block"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once:true, amount:0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           variants={fadeUp}
           style={{ transitionDelay: `${i * 0.05}s` }}
         >
@@ -89,8 +89,8 @@ export default function About() {
         className="vision-mission"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once:true, amount:0.25 }}
-        variants={{ hidden:{}, visible:{ transition:{ staggerChildren:0.12 } } }}
+        viewport={{ once: true, amount: 0.25 }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
       >
         {[
           {
