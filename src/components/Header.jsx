@@ -15,9 +15,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close mobile nav on route change
-  useEffect(() => { close(); }, []);
-
   return (
     <motion.header
       className={`${scrolled ? 'scrolled' : ''} ${isHome ? 'home-header' : ''}`.trim()}

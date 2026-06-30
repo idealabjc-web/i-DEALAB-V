@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 export default function Magnetic({ children, strength = 0.35, className = '', ...props }){
   const ref = useRef(null);

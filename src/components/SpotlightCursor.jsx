@@ -31,7 +31,6 @@ export default function SpotlightCursor() {
     let rx = -200, ry = -200;   // ring position (lerp)
     let gx = -200, gy = -200;   // glow position (slower lerp)
     let isHovering = false;
-    let isClicking = false;
     let raf;
 
     const lerp = (a, b, t) => a + (b - a) * t;

@@ -343,6 +343,37 @@
   .scroll-cue { display: none; }
 }
 
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 94px 0 42px;
+  }
+  .hero-content { padding-inline: clamp(14px, 5vw, 24px); }
+  .hero h1 { font-size: clamp(3.15rem, 17vw, 5.2rem); }
+  .hero .tagline { margin-bottom: 34px; font-size: 0.72rem; letter-spacing: 0.18em; }
+  .hero-stats { max-width: 560px; }
+  .stat .num { font-size: clamp(1.45rem, 7vw, 2rem); }
+  .scroll-cue { bottom: 18px; }
+  .hero-rings { width: min(150vw, 560px); height: min(150vw, 560px); }
+}
+
+@media (max-width: 430px) {
+  .hero { padding-top: 86px; }
+  .hero h1 { font-size: clamp(2.85rem, 16vw, 4rem); }
+  .hero-stats { gap: 4px; padding: 10px 6px; }
+  .hero-stats .stat .label { font-size: 0.43rem; line-height: 1.45; }
+  .quote-section cite { letter-spacing: 0.12em; }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .hero { min-height: 520px; padding: 76px 0 30px; }
+  .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
+  .hero .tagline { margin-bottom: 18px; }
+  .hero-stats { padding-block: 8px; }
+  .scroll-cue { display: none; }
+}
+
 /* ═══════════════════════════════════════════════
    3D FLOATING RINGS — behind hero content
 ═══════════════════════════════════════════════ */
@@ -588,4 +619,12 @@
   100% {
     background-position: 60px 60px;
   }
+}
+
+/* Final mobile overrides must follow the desktop ring dimensions above. */
+@media (max-width: 700px) {
+  .hero-rings { width: min(150vw, 560px); height: min(150vw, 560px); }
+  .hero-ring:nth-child(1) { width: min(112vw, 420px); height: min(112vw, 420px); margin: max(-56vw, -210px) 0 0 max(-56vw, -210px); }
+  .hero-ring:nth-child(2) { width: min(86vw, 320px); height: min(86vw, 320px); margin: max(-43vw, -160px) 0 0 max(-43vw, -160px); }
+  .hero-ring:nth-child(3) { width: min(136vw, 500px); height: min(136vw, 500px); margin: max(-68vw, -250px) 0 0 max(-68vw, -250px); }
 }

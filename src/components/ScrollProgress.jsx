@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 
 /**
  * ScrollProgress — thin amber line at the very top tracking scroll depth.

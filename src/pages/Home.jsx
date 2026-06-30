@@ -55,9 +55,9 @@ const quotes = [
 
 /* ─── Team preview ─── */
 const teamPreview = [
-  { id: 1, initials: '', role: '', name: '' },
-  { id: 2, initials: '', role: '', name: '' },
-  { id: 3, initials: '', role: '', name: '' },
+  { id: 1, initials: 'AS', role: 'Calling Executive', name: 'A.Srinath Reddy' },
+  { id: 2, initials: 'AN', role: 'Web Developer', name: 'A.Nava Kumar Reddy' },
+  { id: 3, initials: 'AP', role: 'Human Resources', name: 'A.Prathyusha' },
 ];
 
 const cardVariants = {

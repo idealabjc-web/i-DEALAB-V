@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 export default function Cursor(){
   const cursorRef = useRef(null);

@@ -61,7 +61,7 @@ export default function OurTeam() {
 
       {/* ─── Team Grid ─── */}
       <section style={{ paddingTop: 0, paddingBottom: 'var(--section-pad)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(0px, 2vw, 24px)' }}>
           
           {/* ─── Team Lead Highlight ─── */}
           {teamLead && (
@@ -77,7 +77,7 @@ export default function OurTeam() {
                 background: 'var(--glass)',
                 border: '2px solid var(--amber)',
                 borderRadius: '24px',
-                padding: '48px 32px',
+                padding: 'clamp(30px, 5vw, 48px) clamp(20px, 4vw, 32px)',
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
@@ -92,8 +92,8 @@ export default function OurTeam() {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                 style={{
-                  width: 180,
-                  height: 180,
+                  width: 'clamp(132px, 35vw, 180px)',
+                  height: 'clamp(132px, 35vw, 180px)',
                   borderRadius: '50%',
                   marginBottom: 32,
                   overflow: 'hidden',
@@ -151,8 +151,8 @@ export default function OurTeam() {
             }}
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: '40px',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
+              gap: 'clamp(20px, 4vw, 40px)',
             }}
           >
             {otherMembers.map((member, i) => (
@@ -175,7 +175,7 @@ export default function OurTeam() {
                   background: 'var(--glass)',
                   border: '1px solid var(--border)',
                   borderRadius: '16px',
-                  padding: '32px 24px',
+                  padding: 'clamp(24px, 4vw, 32px) clamp(18px, 3vw, 24px)',
                   textAlign: 'center',
                   position: 'relative',
                   overflow: 'hidden',
@@ -185,8 +185,8 @@ export default function OurTeam() {
               >
                 {/* Image Container */}
                 <div style={{
-                  width: 140,
-                  height: 140,
+                  width: 'clamp(112px, 30vw, 140px)',
+                  height: 'clamp(112px, 30vw, 140px)',
                   borderRadius: '50%',
                   marginBottom: 24,
                   overflow: 'hidden',
